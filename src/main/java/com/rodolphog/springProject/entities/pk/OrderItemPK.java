@@ -12,7 +12,6 @@ import jakarta.persistence.ManyToOne;
 
 @Embeddable
 public class OrderItemPK implements Serializable {
-
 	private static final long serialVersionUID = 1L;
 
 	@ManyToOne
@@ -22,6 +21,7 @@ public class OrderItemPK implements Serializable {
 	@ManyToOne
 	@JoinColumn(name = "product_id")
 	private Product product;
+	
 
 	public Order getOrder() {
 		return order;
