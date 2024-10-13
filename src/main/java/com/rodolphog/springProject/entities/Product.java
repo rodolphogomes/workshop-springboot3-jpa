@@ -121,7 +121,6 @@ public class Product implements Serializable {
 		return Objects.hash(id);
 	}
 
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -133,8 +132,4 @@ public class Product implements Serializable {
 		Product other = (Product) obj;
 		return Objects.equals(id, other.id);
 	}
-	
-	
-	
-
 }

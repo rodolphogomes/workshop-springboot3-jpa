@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.Objects;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.rodolphog.springProject.entities.pk.OrderItemPK;
 
 import jakarta.persistence.EmbeddedId;
@@ -12,6 +14,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_order_item")
+@JsonPropertyOrder({ "quantity", "price", "product", "subTotal" })
 public class OrderItem implements Serializable  {
 	private static final long serialVersionUID = 1L;
 
@@ -19,8 +22,9 @@ public class OrderItem implements Serializable  {
 	private OrderItemPK id= new OrderItemPK();;
 	
 	private Integer quantity;
-	private Double price;
 	
+	private Double price;
+
 	
 	public OrderItem() {
 	}
@@ -30,7 +34,7 @@ public class OrderItem implements Serializable  {
 		id.setOrder(order);
 		id.setProduct(product);
 		this.quantity = quantity;
-		this.price = price;
+		this.price = product.getPrice();
 	}
 	
 	@JsonIgnore
@@ -64,6 +68,10 @@ public class OrderItem implements Serializable  {
 
 	public void setPrice(Double price) {
 		this.price = price;
+	}
+	
+	public Double getSubTotal() {
+		return price * quantity;
 	}
 
 	@Override
