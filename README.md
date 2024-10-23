@@ -1,11 +1,10 @@
-<h1>workshop-springboot3-jpa - SISTEMA DE PEDIDOS</h1>
+# workshop-springboot3-jpa - SISTEMA DE PEDIDOS
 
-
-<h2>SOBRE O PROJETO</h2>
+## SOBRE O PROJETO
 
 <p>O sistema de pedidos é uma aplicação web que permite aos usuários realizar e gerenciar pedidos de produtos ou serviços de forma eficiente. Utilizando o Spring Boot, a aplicação é capaz de fornecer uma estrutura robusta, escalável e de fácil manutenção.</p>
 
-<h3>PRINCIPAIS FUNCIONALIDADES:</h3>
+### PRINCIPAIS FUNCIONALIDADES:
 
 <ol>
   <li>Cadastro de produtos</li>
